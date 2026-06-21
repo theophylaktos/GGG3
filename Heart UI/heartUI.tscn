@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://cmnis5g3koi1w"]
+
+[ext_resource type="Texture2D" uid="uid://d1px7psfkmgod" path="res://0 Programmer Art/hearts/1hearts.png" id="1_lrinh"]
+[ext_resource type="Texture2D" uid="uid://drc6fn8qpvrm0" path="res://0 Programmer Art/hearts/2hearts.png" id="2_cfste"]
+[ext_resource type="Texture2D" uid="uid://beulscqyscsfl" path="res://0 Programmer Art/hearts/3hearts.png" id="3_uwpev"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m8lx3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_lrinh")
+}],
+"loop": true,
+"name": &"1hearts",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_cfste")
+}],
+"loop": true,
+"name": &"2hearts",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_uwpev")
+}],
+"loop": true,
+"name": &"3hearts",
+"speed": 5.0
+}]
+
+[node name="heartsUi" type="AnimatedSprite2D" unique_id=1482735720]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_m8lx3")
+animation = &"3hearts"
+autoplay = "3hearts"

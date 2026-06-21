@@ -1,6 +1,6 @@
 extends Node2D
 
-var void_world = preload("uid://dgab32mebrcb8")
+var void_world = "res://Void World/void_world.tscn"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dupfeb44k2g7a"]
+
+[ext_resource type="Script" uid="uid://rb51mp4ftl8j" path="res://Main Menu/play_game.gd" id="1_vccqd"]
+
+[node name="Node2D" type="Node2D" unique_id=288576083]
+
+[node name="play_game" type="Button" parent="." unique_id=814525533]
+offset_left = 18.0
+offset_top = 336.0
+offset_right = 324.0
+offset_bottom = 512.0
+text = "go to game :)"
+script = ExtResource("1_vccqd")
+
+[connection signal="button_down" from="play_game" to="play_game" method="_on_button_down"]

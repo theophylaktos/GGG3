@@ -1,11 +1,19 @@
 extends CharacterBody2D
 
+@onready var hearts_ui = $"../CanvasLayer/hearts UI"
+
+const MAIN_MENU = "res://Main Menu/main_menu.tscn"
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 const ABILITY_VELOCITY = -200.0
 
-var world = preload("uid://hgy67euwbl1n")
+var state = "idle"
+
+var health = 3
+
+var initialPosition = position
+
 @onready var sprite = $Sprite
 
 func _physics_process(delta):
@@ -16,31 +24,68 @@ func _physics_process(delta):
 	# Handle jump.
 	if Input.is_action_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		state = "jump"
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction
 	if Input.is_action_pressed("right"):
 		direction = 1
-		sprite.flip_h = true
-		sprite.play()
+		state = "run right"
 		
 	elif Input.is_action_pressed("left"):
 		direction = -1
-		sprite.flip_h = false
-		sprite.play()
+		state = "run left"
 		
 	else:
 		direction = 0
-		sprite.pause()
+		state = "idle"
 
 	if direction:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
-	if Input.is_action_pressed("ability"):
+	if Input.is_action_pressed("ability") && PlayerStats.disableAbility == false:
 		velocity.y = ABILITY_VELOCITY
+		state = "ability"
 
 	move_and_slide()
 	
+	if state == "ability":
+		pass
+	elif state == "jump":
+		sprite.play("jump")
+	elif state == "run left":
+		sprite.play("run")
+		sprite.flip_h = false
+	elif state == "run right":
+		sprite.play("run")
+		sprite.flip_h = true
+	elif state == "idle":
+		sprite.play("idle")
+	
+func takedamage():
+	print(health)
+	position = initialPosition
+	health -= 1
+	if health <= 0:
+		die()
+	elif health == 2:
+		hearts_ui.play("2hearts")
+	elif health == 1: 
+		hearts_ui.play("1hearts")
+	
+func die():
+	switch_scene.switch_scene(MAIN_MENU)
+
+
+func _on_death_body_entered(_body):
+	takedamage()
+
+
+func _on_hurtbox_body_entered(body):
+	takedamage()
+
+func funcDisableAbility():
+	PlayerStats.disableAbility = true
