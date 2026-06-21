@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cx8p2f0hkoc5e"]
+
+[ext_resource type="Texture2D" uid="uid://cu85pf3dxt8pr" path="res://0 Programmer Art/ui-directions.png" id="1_ur0x7"]
+[ext_resource type="Texture2D" uid="uid://cwgqudh0yw6g" path="res://0 Programmer Art/ui-ability.png" id="2_myp6k"]
+
+[node name="Node2D" type="Node2D" unique_id=2092660913]
+
+[node name="ui-directions" type="Sprite2D" parent="." unique_id=1050297423]
+position = Vector2(756, 176)
+scale = Vector2(2.625, 2.625)
+texture = ExtResource("1_ur0x7")
+
+[node name="ui-ability" type="Sprite2D" parent="." unique_id=2138605847]
+position = Vector2(755.75, 197.12502)
+scale = Vector2(3.9218745, 3.9218745)
+texture = ExtResource("2_myp6k")
