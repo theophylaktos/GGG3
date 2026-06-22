@@ -17,5 +17,6 @@ func _process(delta):
 
 func _on_body_entered(body):
 	player.funcDisableAbility()
+	PlayerStats.world = "World2"
 	switch_scene.switch_scene(VOID_CUTSCENE)
 	

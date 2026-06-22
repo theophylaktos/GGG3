@@ -12,9 +12,22 @@ var state = "idle"
 
 var health = 3
 
-var initialPosition = position
+
+
+var initialPosition = Vector2(-334,-384)
 
 @onready var sprite = $Sprite
+
+func _ready():
+	if PlayerStats.world == "World1":
+		hearts_ui.play("World1_Health3")
+	if PlayerStats.world == "World2":
+		hearts_ui.play("World2_Health3")
+	if PlayerStats.world == "World3":
+		hearts_ui.play("World3_Health3")
+	if PlayerStats.world == "World4":
+		hearts_ui.play("World4_Health3")
+
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -69,12 +82,38 @@ func takedamage():
 	print(health)
 	position = initialPosition
 	health -= 1
-	if health <= 0:
-		die()
-	elif health == 2:
-		hearts_ui.play("2hearts")
-	elif health == 1: 
-		hearts_ui.play("1hearts")
+	if PlayerStats.world == "World1":
+		if health <= 0:
+			die()
+		elif health == 2:
+			hearts_ui.play("World1_Health2")
+		elif health == 1: 
+			hearts_ui.play("World1_Health1")
+			
+	if PlayerStats.world == "World2":
+		if health <= 0:
+			die()
+		elif health == 2:
+			hearts_ui.play("World2_Health2")
+		elif health == 1: 
+			hearts_ui.play("World2_Health1")
+			
+	if PlayerStats.world == "World3":
+		if health <= 0:
+			die()
+		elif health == 2:
+			hearts_ui.play("World3_Health2")
+		elif health == 1: 
+			hearts_ui.play("World3_Health1")
+			
+	if PlayerStats.world == "World4":
+		if health <= 0:
+			die()
+		elif health == 2:
+			hearts_ui.play("World4_Health2")
+		elif health == 1: 
+			hearts_ui.play("World4_Health1")
+
 	
 func die():
 	switch_scene.switch_scene(MAIN_MENU)

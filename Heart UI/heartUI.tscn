@@ -1,38 +1,118 @@
 [gd_scene format=3 uid="uid://cmnis5g3koi1w"]
 
-[ext_resource type="Texture2D" uid="uid://d1px7psfkmgod" path="res://0 Programmer Art/hearts/1hearts.png" id="1_lrinh"]
-[ext_resource type="Texture2D" uid="uid://drc6fn8qpvrm0" path="res://0 Programmer Art/hearts/2hearts.png" id="2_cfste"]
-[ext_resource type="Texture2D" uid="uid://beulscqyscsfl" path="res://0 Programmer Art/hearts/3hearts.png" id="3_uwpev"]
+[ext_resource type="Texture2D" uid="uid://b6nk2g8tak3dr" path="res://2 Final Art/UI/Hearts/World1/World1_Health1.png" id="1_saeo6"]
+[ext_resource type="Texture2D" uid="uid://daw6a6k8ke0fr" path="res://2 Final Art/UI/Hearts/World1/World1_Health2.png" id="2_nhdjc"]
+[ext_resource type="Texture2D" uid="uid://dt06p66oeaol" path="res://2 Final Art/UI/Hearts/World1/World1_Health3.png" id="3_vuuf1"]
+[ext_resource type="Texture2D" uid="uid://cop5njo83xrro" path="res://2 Final Art/UI/Hearts/World2/World2_Health1.png" id="4_fl3s1"]
+[ext_resource type="Texture2D" uid="uid://b32dxo3srlrwi" path="res://2 Final Art/UI/Hearts/World2/World2_Health2.png" id="5_va26o"]
+[ext_resource type="Texture2D" uid="uid://bxtwysg1sqte2" path="res://2 Final Art/UI/Hearts/World2/World2_Health3.png" id="6_5msm0"]
+[ext_resource type="Texture2D" uid="uid://d4b11vvyeoio5" path="res://2 Final Art/UI/Hearts/World3/World3_Health1.png" id="7_hd7f5"]
+[ext_resource type="Texture2D" uid="uid://gw8qxbc2r1o6" path="res://2 Final Art/UI/Hearts/World3/World3_Health2.png" id="8_3gy7r"]
+[ext_resource type="Texture2D" uid="uid://3a5r2lc7qfjy" path="res://2 Final Art/UI/Hearts/World3/World3_Health3.png" id="9_sd6x8"]
+[ext_resource type="Texture2D" uid="uid://dsfj3edblkfcw" path="res://2 Final Art/UI/Hearts/World4/World4_Health1.png" id="10_50r4v"]
+[ext_resource type="Texture2D" uid="uid://c65gssae37ev6" path="res://2 Final Art/UI/Hearts/World4/World4_Health2.png" id="11_oj1cg"]
+[ext_resource type="Texture2D" uid="uid://bhw1nlpm145hi" path="res://2 Final Art/UI/Hearts/World4/World4_Health3.png" id="12_soegl"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_m8lx3"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_lrinh")
+"texture": ExtResource("1_saeo6")
 }],
 "loop": true,
-"name": &"1hearts",
+"name": &"World1_Health1",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_cfste")
+"texture": ExtResource("2_nhdjc")
 }],
 "loop": true,
-"name": &"2hearts",
+"name": &"World1_Health2",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_uwpev")
+"texture": ExtResource("3_vuuf1")
 }],
 "loop": true,
-"name": &"3hearts",
+"name": &"World1_Health3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_fl3s1")
+}],
+"loop": true,
+"name": &"World2_Health1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_va26o")
+}],
+"loop": true,
+"name": &"World2_Health2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_5msm0")
+}],
+"loop": true,
+"name": &"World2_Health3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_hd7f5")
+}],
+"loop": true,
+"name": &"World3_Health1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_3gy7r")
+}],
+"loop": true,
+"name": &"World3_Health2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_sd6x8")
+}],
+"loop": true,
+"name": &"World3_Health3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_50r4v")
+}],
+"loop": true,
+"name": &"World4_Health1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_oj1cg")
+}],
+"loop": true,
+"name": &"World4_Health2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_soegl")
+}],
+"loop": true,
+"name": &"World4_Health3",
 "speed": 5.0
 }]
 
 [node name="heartsUi" type="AnimatedSprite2D" unique_id=1482735720]
-scale = Vector2(2, 2)
+scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_m8lx3")
-animation = &"3hearts"
-autoplay = "3hearts"
+animation = &"World4_Health3"

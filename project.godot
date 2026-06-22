@@ -20,6 +20,10 @@ config/icon="res://0 Programmer Art/icon.svg"
 switch_scene="*uid://b11mwcsaffkik"
 PlayerStats="*uid://cbdbhx55vyu1l"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [input]
 
 jump={

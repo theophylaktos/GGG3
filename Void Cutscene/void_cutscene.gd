@@ -1,6 +1,6 @@
 extends Node2D
 
-var void_world = "res://Void World/void_world.tscn"
+var void_world = "res://World2/world2.tscn"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

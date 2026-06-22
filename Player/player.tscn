@@ -122,9 +122,6 @@ sprite_frames = SubResource("SpriteFrames_i3pqv")
 animation = &"jump"
 autoplay = "idle"
 
-[node name="Camera" type="Camera2D" parent="." unique_id=2072839353]
-zoom = Vector2(2, 2)
-
 [node name="Player" type="Node2D" parent="." unique_id=435707991]
 
 [node name="Node2D" type="Node2D" parent="." unique_id=973608228]

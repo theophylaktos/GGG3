@@ -1,0 +1,85 @@
+[gd_scene format=4 uid="uid://dgab32mebrcb8"]
+
+[ext_resource type="Texture2D" uid="uid://di1t1a5xaapa2" path="res://0 Programmer Art/platform.png" id="1_vmp1b"]
+[ext_resource type="PackedScene" uid="uid://cy5t4agx14hmv" path="res://Player/player.tscn" id="2_sx8rn"]
+[ext_resource type="PackedScene" uid="uid://cmnis5g3koi1w" path="res://Heart UI/heartUI.tscn" id="3_mc6qg"]
+[ext_resource type="Texture2D" uid="uid://bd80h6va5yoku" path="res://2 Final Art/Backgrounds/World2.png" id="4_m6wkt"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2yiem"]
+texture = ExtResource("1_vmp1b")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_uxxa6"]
+physics_layer_0/collision_layer = 2
+sources/0 = SubResource("TileSetAtlasSource_2yiem")
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vmp1b"]
+distance = -374.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_sx8rn"]
+distance = 145.23077
+
+[node name="Node2D" type="Node2D" unique_id=203369103]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=777966139]
+tile_map_data = PackedByteArray("AADo/+r/AAAAAAAAAADo/+v/AAAAAAEAAADp/+r/AAABAAAAAADp/+v/AAABAAEAAADq/+r/AAACAAAAAADq/+v/AAACAAEAAADr/+r/AAADAAAAAADr/+v/AAADAAEAAADs/+r/AAAAAAAAAADs/+v/AAAAAAEAAADt/+r/AAABAAAAAADt/+v/AAABAAEAAADu/+r/AAACAAAAAADu/+v/AAACAAEAAADv/+r/AAADAAAAAADv/+v/AAADAAEAAAA=")
+tile_set = SubResource("TileSet_uxxa6")
+
+[node name="Player" parent="." unique_id=435707991 instance=ExtResource("2_sx8rn")]
+z_index = 1
+position = Vector2(-334, -384)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=2142010640]
+zoom = Vector2(1.6, 1.6)
+limit_left = 0
+limit_right = 0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=960195284]
+
+[node name="hearts UI" parent="CanvasLayer" unique_id=1482735720 instance=ExtResource("3_mc6qg")]
+position = Vector2(73, 22)
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1792092607]
+z_index = -1
+position = Vector2(0, -1185)
+scale = Vector2(0.388, 0.439)
+texture = ExtResource("4_m6wkt")
+
+[node name="Left Bound" type="CharacterBody2D" parent="." unique_id=1354543948]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left Bound" unique_id=1635520626]
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_vmp1b")
+
+[node name="Right Bound" type="CharacterBody2D" parent="." unique_id=1523669919]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right Bound" unique_id=1612455676]
+rotation = -1.5707964
+shape = SubResource("WorldBoundaryShape2D_vmp1b")
+
+[node name="death" type="Area2D" parent="." unique_id=264020002]
+scale = Vector2(17.96875, 20.3125)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="death" unique_id=1068144785]
+scale = Vector2(0.1, 0.1)
+shape = SubResource("WorldBoundaryShape2D_sx8rn")
+
+[connection signal="body_entered" from="death" to="Player" method="_on_death_body_entered"]

@@ -1,0 +1,123 @@
+[gd_scene format=4 uid="uid://hgy67euwbl1n"]
+
+[ext_resource type="Texture2D" uid="uid://dyl3b3xxgla0r" path="res://2 Final Art/Backgrounds/World1.png" id="1_wdv28"]
+[ext_resource type="PackedScene" uid="uid://cy5t4agx14hmv" path="res://Player/player.tscn" id="2_0gjxj"]
+[ext_resource type="Texture2D" uid="uid://di1t1a5xaapa2" path="res://0 Programmer Art/platform.png" id="3_p50h6"]
+[ext_resource type="Texture2D" uid="uid://cxh2x74fkqwur" path="res://0 Programmer Art/spike.png" id="4_7xvjd"]
+[ext_resource type="PackedScene" uid="uid://cmnis5g3koi1w" path="res://Heart UI/heartUI.tscn" id="5_wftm1"]
+[ext_resource type="PackedScene" uid="uid://cx8p2f0hkoc5e" path="res://World1/ui_tutorial.tscn" id="6_kpehh"]
+[ext_resource type="Script" uid="uid://85iw2nqekk8e" path="res://World1/ui_tutorial.gd" id="7_sxdrj"]
+[ext_resource type="Script" uid="uid://cje3u748wwcdq" path="res://World1/ability_ui_activator.gd" id="8_l87d6"]
+[ext_resource type="Script" uid="uid://ci5gpml4i7mks" path="res://World1/goto_void_cutscene.gd" id="9_qtj1r"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8a836"]
+texture = ExtResource("3_p50h6")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bj5of"]
+texture = ExtResource("4_7xvjd")
+0:0/0 = 0
+0:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(0.09892273, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_j8job"]
+physics_layer_0/collision_layer = 2
+physics_layer_1/collision_layer = 8
+sources/0 = SubResource("TileSetAtlasSource_8a836")
+sources/1 = SubResource("TileSetAtlasSource_bj5of")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vqld6"]
+size = Vector2(256.5, 287.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e3pyp"]
+size = Vector2(749, 81)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5xvbl"]
+distance = 145.23077
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wdv28"]
+distance = -374.0
+
+[node name="Node2D" type="Node2D" unique_id=98931531]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1838495746]
+position = Vector2(0, -1185)
+scale = Vector2(0.38821644, 0.4388534)
+texture = ExtResource("1_wdv28")
+
+[node name="Player" parent="." unique_id=435707991 instance=ExtResource("2_0gjxj")]
+position = Vector2(-334, -384)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1033270748]
+zoom = Vector2(1.6, 1.6)
+limit_left = 0
+limit_right = 0
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1540739154]
+tile_map_data = PackedByteArray("AADq/+z/AAABAAEAAADr/+z/AAACAAEAAADs/+z/AAADAAEAAADt/+z/AAAAAAEAAADy/+r/AAAAAAEAAADz/+r/AAABAAEAAAD0/+r/AAACAAEAAADp/+v/AAAAAAAAAADp/+z/AAAAAAEAAADq/+H/AAAAAAAAAADq/+L/AAAAAAEAAADq/+v/AAABAAAAAADr/+H/AAABAAAAAADr/+L/AAABAAEAAADr/+v/AAACAAAAAADs/+H/AAACAAAAAADs/+L/AAACAAEAAADs/+v/AAADAAAAAADt/+H/AAADAAAAAADt/+L/AAADAAEAAADt/+v/AAAAAAAAAADu/+v/AAABAAAAAADu/+z/AAABAAEAAADv/+T/AAAAAAAAAADv/+X/AAAAAAEAAADv/+v/AAACAAAAAADv/+z/AAACAAEAAADw/+T/AAABAAAAAADw/+X/AAABAAEAAADw/+r/AQAAAAAAAADw/+v/AAADAAAAAADw/+z/AAADAAEAAADx/9//AAAAAAAAAADx/+D/AAAAAAEAAADx/+T/AAACAAAAAADx/+X/AAACAAEAAADy/9//AAABAAAAAADy/+D/AAABAAEAAADy/+T/AAADAAAAAADy/+X/AAADAAEAAADy/+n/AAAAAAAAAADz/9//AAACAAAAAADz/+D/AAACAAEAAADz/+n/AAABAAAAAAD0/9//AAADAAAAAAD0/+D/AAADAAEAAAD0/+n/AAACAAAAAAD1/+n/AAADAAAAAAD1/+r/AAADAAEAAAD3/+b/AAAAAAAAAAD3/+f/AAAAAAEAAAD4/+D/AAAAAAAAAAD4/+H/AAAAAAEAAAD4/+b/AAABAAAAAAD4/+f/AAABAAEAAAD5/+D/AAABAAAAAAD5/+H/AAABAAEAAAD5/+b/AAACAAAAAAD5/+f/AAACAAEAAAD6/+D/AAACAAAAAAD6/+H/AAACAAEAAAD6/+b/AAADAAAAAAD6/+f/AAADAAEAAAD7/+D/AAADAAAAAAD7/+H/AAADAAEAAAD+/+H/AAAAAAAAAAD+/+L/AAAAAAEAAAD//+H/AAABAAAAAAD//+L/AAABAAEAAAAAAOH/AAACAAAAAAAAAOL/AAACAAEAAAABAOH/AAADAAAAAAABAOL/AAADAAEAAAADAN7/AAAAAAAAAAADAN//AAAAAAEAAAAEAN7/AAABAAAAAAAEAN//AAABAAEAAAAFAN7/AAACAAAAAAAFAN//AAACAAEAAAAGAN7/AAADAAAAAAAGAN//AAADAAEAAAAJANz/AAAAAAAAAAAJAN3/AAAAAAEAAAAKANz/AAABAAAAAAAKAN3/AAABAAEAAAALANz/AAACAAAAAAALAN3/AAACAAEAAAAMANz/AAADAAAAAAAMAN3/AAADAAEAAAAPANz/AAAAAAAAAAAPAN3/AAAAAAEAAAAQANz/AAABAAAAAAAQAN3/AAABAAEAAAARANz/AAACAAAAAAARAN3/AAACAAEAAAASANz/AAADAAAAAAASAN3/AAADAAEAAAA=")
+tile_set = SubResource("TileSet_j8job")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=451251421]
+layer = 2
+
+[node name="hearts UI" parent="CanvasLayer" unique_id=1502796850 instance=ExtResource("5_wftm1")]
+position = Vector2(73, 22)
+
+[node name="tutorial UI" parent="CanvasLayer" unique_id=2092660913 instance=ExtResource("6_kpehh")]
+position = Vector2(310, 342)
+script = ExtResource("7_sxdrj")
+
+[node name="ability ui activator" type="Area2D" parent="." unique_id=2001889441]
+script = ExtResource("8_l87d6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ability ui activator" unique_id=338783169]
+position = Vector2(188, -726)
+shape = SubResource("RectangleShape2D_vqld6")
+
+[node name="void cutscene" type="Area2D" parent="." unique_id=1369296928]
+script = ExtResource("9_qtj1r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="void cutscene" unique_id=1339087904]
+position = Vector2(-62, -995)
+shape = SubResource("RectangleShape2D_e3pyp")
+
+[node name="death" type="Area2D" parent="." unique_id=2101512082]
+scale = Vector2(17.96875, 20.3125)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="death" unique_id=200157422]
+scale = Vector2(0.1, 0.1)
+shape = SubResource("WorldBoundaryShape2D_5xvbl")
+
+[node name="Left Bound" type="CharacterBody2D" parent="." unique_id=646543558]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left Bound" unique_id=386380264]
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_wdv28")
+
+[node name="Right Bound" type="CharacterBody2D" parent="." unique_id=1387870405]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right Bound" unique_id=707699971]
+rotation = -1.5707964
+shape = SubResource("WorldBoundaryShape2D_wdv28")
+
+[connection signal="body_entered" from="ability ui activator" to="CanvasLayer/tutorial UI" method="_on_ability_tutorial_ui_activate_body_entered"]
+[connection signal="body_entered" from="ability ui activator" to="ability ui activator" method="_on_body_entered"]
+[connection signal="body_entered" from="void cutscene" to="void cutscene" method="_on_body_entered"]
+[connection signal="body_entered" from="death" to="Player" method="_on_death_body_entered"]

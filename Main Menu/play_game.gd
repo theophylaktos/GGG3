@@ -1,6 +1,6 @@
 extends Button
 
-const SUNSHINE_WORLD = "res://Sunshine World/sunshine_world.tscn"
+const SUNSHINE_WORLD = "res://World1/world1.tscn"
 
 
 # Called when the node enters the scene tree for the first time.
