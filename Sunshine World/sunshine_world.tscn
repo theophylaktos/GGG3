@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cxh2x74fkqwur" path="res://0 Programmer Art/spike.png" id="4_hacmb"]
 [ext_resource type="PackedScene" uid="uid://cx8p2f0hkoc5e" path="res://Sunshine World/ui_tutorial.tscn" id="5_deapy"]
 [ext_resource type="Script" uid="uid://ci5gpml4i7mks" path="res://Sunshine World/goto_void_cutscene.gd" id="6_5xvbl"]
+[ext_resource type="Script" uid="uid://cje3u748wwcdq" path="res://Sunshine World/ability_ui_activator.gd" id="8_bj5of"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8a836"]
 texture = ExtResource("2_slaui")
@@ -42,9 +43,6 @@ sources/1 = SubResource("TileSetAtlasSource_bj5of")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vqld6"]
 size = Vector2(256.5, 287.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_deapy"]
-size = Vector2(239, 166)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e3pyp"]
 size = Vector2(240, 81)
 
@@ -67,6 +65,7 @@ tile_set = SubResource("TileSet_j8job")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=451251421]
 layer = 2
+visible = false
 
 [node name="hearts UI" parent="CanvasLayer" unique_id=1502796850 instance=ExtResource("4_ce7t0")]
 position = Vector2(55, 23)
@@ -76,16 +75,11 @@ position = Vector2(310, 342)
 script = ExtResource("2_deapy")
 
 [node name="ability ui activator" type="Area2D" parent="." unique_id=2001889441]
+script = ExtResource("8_bj5of")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ability ui activator" unique_id=338783169]
 position = Vector2(744, -97)
 shape = SubResource("RectangleShape2D_vqld6")
-
-[node name="ability ui flash activator" type="Area2D" parent="." unique_id=1955065537]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ability ui flash activator" unique_id=1123557993]
-position = Vector2(1155, -647)
-shape = SubResource("RectangleShape2D_deapy")
 
 [node name="void cutscene" type="Area2D" parent="." unique_id=1369296928]
 script = ExtResource("6_5xvbl")
@@ -103,5 +97,6 @@ collision_layer = 4
 shape = SubResource("WorldBoundaryShape2D_5xvbl")
 
 [connection signal="body_entered" from="ability ui activator" to="CanvasLayer/tutorial UI" method="_on_ability_tutorial_ui_activate_body_entered"]
+[connection signal="body_entered" from="ability ui activator" to="ability ui activator" method="_on_body_entered"]
 [connection signal="body_entered" from="void cutscene" to="void cutscene" method="_on_body_entered"]
 [connection signal="body_entered" from="death" to="Player" method="_on_death_body_entered"]

@@ -1,3 +1,7 @@
 extends Node
 
-var disableAbility = false
+var disableAbility = true
+
+var part1pickedup = false
+var part2pickedup = false
+var part3pickedup = false

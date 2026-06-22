@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://di1t1a5xaapa2" path="res://0 Programmer Art/platform.png" id="1_rroxk"]
 [ext_resource type="PackedScene" uid="uid://cy5t4agx14hmv" path="res://Player/player.tscn" id="2_ubh30"]
+[ext_resource type="PackedScene" uid="uid://cmnis5g3koi1w" path="res://Heart UI/heartUI.tscn" id="3_ubh30"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2yiem"]
 texture = ExtResource("1_rroxk")
@@ -33,3 +34,11 @@ tile_map_data = PackedByteArray("AAD8/wEAAAAAAAAAAAD8/wIAAAAAAAEAAAD9/wEAAAABAAA
 tile_set = SubResource("TileSet_uxxa6")
 
 [node name="Player" parent="." unique_id=435707991 instance=ExtResource("2_ubh30")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=960195284]
+visible = false
+
+[node name="hearts UI" parent="CanvasLayer" unique_id=1482735720 instance=ExtResource("3_ubh30")]
+position = Vector2(52, 20)
+
+[node name="Parts" type="Node" parent="." unique_id=893444208]
