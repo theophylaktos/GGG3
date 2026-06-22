@@ -12,13 +12,14 @@ var state = "idle"
 
 var health = 3
 
-
+var was_on_floor = true
 
 var initialPosition = Vector2(-334,-384)
 
 @onready var sprite = $Sprite
 
 func _ready():
+		
 	if PlayerStats.world == "World1":
 		hearts_ui.play("World1_Health3")
 	if PlayerStats.world == "World2":
@@ -30,15 +31,17 @@ func _ready():
 
 
 func _physics_process(delta):
+	
+	var is_on_floor_before_move = is_on_floor()
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
 	# Handle jump.
-	if Input.is_action_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-		state = "jump"
-
+		
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction
@@ -65,19 +68,40 @@ func _physics_process(delta):
 
 	move_and_slide()
 	
+	var is_on_floor_after_move = is_on_floor()
+		
+	if velocity.x > 0:
+		sprite.flip_h = true
+	elif velocity.x < 0:
+		sprite.flip_h = false
+		
 	if state == "ability":
 		pass
-	elif state == "jump":
-		sprite.play("jump")
+
+	elif not is_on_floor_before_move and is_on_floor_after_move:
+		sprite.play("jump_fall")
+
+	elif sprite.animation == "jump_fall" and sprite.is_playing():
+		pass
+
+	elif is_on_floor_before_move and not is_on_floor_after_move:
+		sprite.play("jump_windup")
+
+	elif not is_on_floor_after_move:
+		if sprite.animation == "jump_windup" and sprite.is_playing():
+			pass
+		else:
+			sprite.play("jump_hold") 
+			
 	elif state == "run left":
 		sprite.play("run")
-		sprite.flip_h = false
+		
 	elif state == "run right":
 		sprite.play("run")
-		sprite.flip_h = true
+		
 	elif state == "idle":
 		sprite.play("idle")
-	
+		
 func takedamage():
 	print(health)
 	position = initialPosition

@@ -1,10 +1,19 @@
 [gd_scene format=3 uid="uid://esnlv36v8pi8"]
 
+[ext_resource type="Script" uid="uid://mwvx3iu417n7" path="res://part.gd" id="1_ut4fy"]
+[ext_resource type="Texture2D" uid="uid://casyy0p2ubcbe" path="res://2 Final Art/Parts/part1.png" id="2_iflea"]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_xkj4n"]
 
-[node name="Area2D" type="Area2D" unique_id=1544738549]
+[node name="Part" type="Area2D" unique_id=1544738549]
+collision_layer = 0
+script = ExtResource("1_ut4fy")
+metadata/part = ""
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1605715263]
+texture = ExtResource("2_iflea")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1257215229]
 shape = SubResource("CircleShape2D_xkj4n")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

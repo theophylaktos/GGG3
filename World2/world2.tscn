@@ -47,7 +47,9 @@ position = Vector2(-334, -384)
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=2142010640]
 zoom = Vector2(1.6, 1.6)
 limit_left = 0
+limit_top = -2365
 limit_right = 0
+limit_bottom = 0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=960195284]
 

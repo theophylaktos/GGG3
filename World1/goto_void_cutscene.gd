@@ -1,6 +1,6 @@
 extends Area2D
 
-const VOID_CUTSCENE = "res://Void Cutscene/void_cutscene.tscn"
+const VOID_CUTSCENE = "res://Cutscene12/cutscene12.tscn"
 
 @onready var player = $"../Player"
 
