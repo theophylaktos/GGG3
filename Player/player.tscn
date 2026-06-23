@@ -16,7 +16,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_onrkg"]
 radius = 12.0
-height = 46.0
+height = 56.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_i3pqv"]
 animations = [{
@@ -84,19 +84,21 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n471f"]
 radius = 12.0
-height = 46.0
+height = 56.0
 
 [node name="Player" type="CharacterBody2D" unique_id=765603924]
 collision_mask = 7
 script = ExtResource("1_onrkg")
 
 [node name="Hitbox" type="CollisionShape2D" parent="." unique_id=298796179]
+position = Vector2(0, 4)
 shape = SubResource("CapsuleShape2D_onrkg")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1272141417]
-scale = Vector2(0.075, 0.057)
+position = Vector2(-3, 2)
+scale = Vector2(0.075, 0.075)
 sprite_frames = SubResource("SpriteFrames_i3pqv")
-animation = &"jump_fall"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="Player" type="Node2D" parent="." unique_id=435707991]
@@ -104,9 +106,11 @@ autoplay = "idle"
 [node name="Node2D" type="Node2D" parent="." unique_id=973608228]
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=58085275]
+position = Vector2(-7, 0)
 collision_mask = 8
 
 [node name="Hurtbox" type="CollisionShape2D" parent="Hurtbox" unique_id=1056899238]
+position = Vector2(7, 4)
 shape = SubResource("CapsuleShape2D_n471f")
 
 [connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]

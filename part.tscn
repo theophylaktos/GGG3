@@ -13,6 +13,8 @@ metadata/part = ""
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1605715263]
 texture = ExtResource("2_iflea")
 
+[node name="Camera2D" type="Camera2D" parent="Sprite2D" unique_id=1526973368]
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1257215229]
 shape = SubResource("CircleShape2D_xkj4n")
 

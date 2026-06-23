@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4jn7qhv01y6g"
-path="res://.godot/imported/world1terrain.png-0df5a71b342ac03716a20b762dba24c0.ctex"
+uid="uid://cp3mjnwrv5eld"
+path="res://.godot/imported/flower_platform.png-b808f1155b776c53f52a2dd3408fcbc5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://2 Final Art/Terrain/Platforms/world1terrain.png"
-dest_files=["res://.godot/imported/world1terrain.png-0df5a71b342ac03716a20b762dba24c0.ctex"]
+source_file="res://2 Final Art/Terrain/flower_platform.png"
+dest_files=["res://.godot/imported/flower_platform.png-b808f1155b776c53f52a2dd3408fcbc5.ctex"]
 
 [params]
 

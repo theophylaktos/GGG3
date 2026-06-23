@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dks5q3rrj8cml"
-path="res://.godot/imported/world1terrainflower.png-c8ca8af9fb6b09ba6708914f872f4a2c.ctex"
+uid="uid://b30p64cmlc52a"
+path="res://.godot/imported/spike.png-118f315412c32a1e2eb46c47fb00d16a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://2 Final Art/Terrain/Platforms/world1terrainflower.png"
-dest_files=["res://.godot/imported/world1terrainflower.png-c8ca8af9fb6b09ba6708914f872f4a2c.ctex"]
+source_file="res://2 Final Art/Terrain/spike.png"
+dest_files=["res://.godot/imported/spike.png-118f315412c32a1e2eb46c47fb00d16a.ctex"]
 
 [params]
 

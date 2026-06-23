@@ -5,7 +5,7 @@ extends CharacterBody2D
 const MAIN_MENU = "res://Main Menu/main_menu.tscn"
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -500.0
 const ABILITY_VELOCITY = -200.0
 
 var state = "idle"
@@ -14,7 +14,7 @@ var health = 3
 
 var was_on_floor = true
 
-var initialPosition = Vector2(-334,-384)
+var initialPosition = Vector2(-334,-139.0)
 
 @onready var sprite = $Sprite
 
@@ -101,6 +101,9 @@ func _physics_process(delta):
 		
 	elif state == "idle":
 		sprite.play("idle")
+		
+	if Input.is_action_just_pressed("reset"):
+		takedamage()
 		
 func takedamage():
 	print(health)
