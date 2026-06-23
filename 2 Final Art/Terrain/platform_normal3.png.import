@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dt8s7o6cfrnrs"
-path="res://.godot/imported/player_fall3.png-a15688adab27604e4a45461c41abc81f.ctex"
+uid="uid://bpn2s0m2pexhf"
+path="res://.godot/imported/platform_normal3.png-c7e340dac9f9765474fcf310aa7df77e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://2 Final Art/Player/Jump/player_fall3.png"
-dest_files=["res://.godot/imported/player_fall3.png-a15688adab27604e4a45461c41abc81f.ctex"]
+source_file="res://2 Final Art/Terrain/platform_normal3.png"
+dest_files=["res://.godot/imported/platform_normal3.png-c7e340dac9f9765474fcf310aa7df77e.ctex"]
 
 [params]
 

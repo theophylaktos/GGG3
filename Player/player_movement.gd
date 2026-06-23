@@ -4,8 +4,11 @@ extends CharacterBody2D
 
 const MAIN_MENU = "res://Main Menu/main_menu.tscn"
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -500.0
+const TARGET_VELOCITY = 300.0
+const ACCELERATION = 3000.0
+const DECELLERATION = 3000.0
+
+const JUMP_VELOCITY = -700.0
 const ABILITY_VELOCITY = -200.0
 
 var state = "idle"
@@ -57,10 +60,10 @@ func _physics_process(delta):
 		direction = 0
 		state = "idle"
 
-	if direction:
-		velocity.x = direction * SPEED
+	if direction: 
+		velocity.x = move_toward(velocity.x, TARGET_VELOCITY * direction, ACCELERATION * delta)
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, DECELLERATION * delta)
 
 	if Input.is_action_pressed("ability") && PlayerStats.disableAbility == false:
 		velocity.y = ABILITY_VELOCITY

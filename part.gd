@@ -1,24 +1,33 @@
 extends Area2D
 
-#var time = 0.0
-#var initialY = 0.0
-#
-## Called when the node enters the scene tree for the first time.
-#func _ready():
-	#initialY = sprite_2d.global_position.y
-#
-#
-## Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-	#time += delta
-	#position.y = initialY + sin(time * 2.0) * 100.0
-	#print(sprite_2d.global_position.y)
+@onready var part = $part_moving/part
 
+const CUTSCENE_23 = "res://Cutscene23/cutscene23.tscn"
+const CUTSCENE_34 = "res://Cutscene34/cutscene34.tscn"
+const CUTSCENEFINAL = "res://Cutscene Final/cutscenefinal.tscn"
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	if get_meta("part") == "one":
+		part.play("part1")
+	elif get_meta("part") == "two":
+		part.play("part2")
+	elif get_meta("part") == "three":
+		part.play("part3")
+
+	
 func _on_body_entered(body):
 	if get_meta("part") == "one":
 		PlayerStats.part1pickedup = true
+		switch_scene.switch_scene(CUTSCENE_23)
 	if get_meta("part") == "two":
+		switch_scene.switch_scene(CUTSCENE_34)
 		PlayerStats.part2pickedup = true
 	if get_meta("part") == "three":
+		switch_scene.switch_scene(CUTSCENEFINAL)
 		PlayerStats.part3pickedup = true
 	print(PlayerStats.part1pickedup,PlayerStats.part2pickedup,PlayerStats.part3pickedup)

@@ -1,21 +1,83 @@
 [gd_scene format=3 uid="uid://esnlv36v8pi8"]
 
 [ext_resource type="Script" uid="uid://mwvx3iu417n7" path="res://part.gd" id="1_ut4fy"]
+[ext_resource type="Script" uid="uid://coor6h0p6l75a" path="res://part_moving.gd" id="2_ajdyi"]
 [ext_resource type="Texture2D" uid="uid://casyy0p2ubcbe" path="res://2 Final Art/Parts/part1.png" id="2_iflea"]
+[ext_resource type="Texture2D" uid="uid://cjkmcutxups3t" path="res://2 Final Art/Parts/smoke_sheet.png" id="4_6rbcj"]
+[ext_resource type="Texture2D" uid="uid://p0ih4p6omx4q" path="res://2 Final Art/Parts/part2.png" id="4_wnacm"]
+[ext_resource type="Texture2D" uid="uid://crf8gcnxltt5d" path="res://2 Final Art/Parts/part3.png" id="5_a4elq"]
+[ext_resource type="Texture2D" uid="uid://bgcml41jsdf8t" path="res://2 Final Art/Parts/core.png" id="5_wnacm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xkj4n"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_86kbv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_iflea")
+}],
+"loop": true,
+"name": &"part1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_wnacm")
+}],
+"loop": true,
+"name": &"part2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_a4elq")
+}],
+"loop": true,
+"name": &"part3",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a4elq"]
+atlas = ExtResource("4_6rbcj")
+region = Rect2(95.92581, 103.69102, 40.29535, 36.655785)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_86kbv"]
+particle_flag_disable_z = true
+radial_velocity_min = -67.41002
+radial_velocity_max = 44.939976
+gravity = Vector3(0, -68, 0)
 
 [node name="Part" type="Area2D" unique_id=1544738549]
 collision_layer = 0
 script = ExtResource("1_ut4fy")
 metadata/part = ""
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1605715263]
-texture = ExtResource("2_iflea")
-
-[node name="Camera2D" type="Camera2D" parent="Sprite2D" unique_id=1526973368]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=420348399]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1257215229]
+visible = false
+z_index = 1
 shape = SubResource("CircleShape2D_xkj4n")
+
+[node name="part_moving" type="Node2D" parent="." unique_id=1291092642]
+scale = Vector2(2, 2)
+script = ExtResource("2_ajdyi")
+
+[node name="part" type="AnimatedSprite2D" parent="part_moving" unique_id=1485740977]
+z_index = 1
+sprite_frames = SubResource("SpriteFrames_86kbv")
+animation = &"part1"
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="part_moving" unique_id=1404931968]
+z_index = -1
+amount = 15
+amount_ratio = 0.8433
+texture = SubResource("AtlasTexture_a4elq")
+lifetime = 0.85
+process_material = SubResource("ParticleProcessMaterial_86kbv")
+
+[node name="core" type="Sprite2D" parent="part_moving" unique_id=1735429975]
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("5_wnacm")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

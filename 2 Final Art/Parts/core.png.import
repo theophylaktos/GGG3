@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dt8s7o6cfrnrs"
-path="res://.godot/imported/player_fall3.png-a15688adab27604e4a45461c41abc81f.ctex"
+uid="uid://bgcml41jsdf8t"
+path="res://.godot/imported/core.png-cab4b67747711273888a1f328f81f408.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://2 Final Art/Player/Jump/player_fall3.png"
-dest_files=["res://.godot/imported/player_fall3.png-a15688adab27604e4a45461c41abc81f.ctex"]
+source_file="res://2 Final Art/Parts/core.png"
+dest_files=["res://.godot/imported/core.png-cab4b67747711273888a1f328f81f408.ctex"]
 
 [params]
 
