@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://mwvx3iu417n7" path="res://part.gd" id="1_ut4fy"]
 [ext_resource type="Script" uid="uid://coor6h0p6l75a" path="res://part_moving.gd" id="2_ajdyi"]
-[ext_resource type="Texture2D" uid="uid://casyy0p2ubcbe" path="res://2 Final Art/Parts/part1.png" id="2_iflea"]
+[ext_resource type="Texture2D" uid="uid://eyhdq868hsi5" path="res://2 Final Art/Parts/IMG_3214.png" id="3_wnacm"]
 [ext_resource type="Texture2D" uid="uid://cjkmcutxups3t" path="res://2 Final Art/Parts/smoke_sheet.png" id="4_6rbcj"]
-[ext_resource type="Texture2D" uid="uid://p0ih4p6omx4q" path="res://2 Final Art/Parts/part2.png" id="4_wnacm"]
-[ext_resource type="Texture2D" uid="uid://crf8gcnxltt5d" path="res://2 Final Art/Parts/part3.png" id="5_a4elq"]
+[ext_resource type="Texture2D" uid="uid://c34r3kg1rw1uw" path="res://2 Final Art/Parts/IMG_3215.png" id="4_a4elq"]
+[ext_resource type="Texture2D" uid="uid://bcmewds4qo5sy" path="res://2 Final Art/Parts/IMG_3216.png" id="5_86kbv"]
 [ext_resource type="Texture2D" uid="uid://bgcml41jsdf8t" path="res://2 Final Art/Parts/core.png" id="5_wnacm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xkj4n"]
@@ -14,7 +14,7 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_iflea")
+"texture": ExtResource("3_wnacm")
 }],
 "loop": true,
 "name": &"part1",
@@ -22,7 +22,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_wnacm")
+"texture": ExtResource("4_a4elq")
 }],
 "loop": true,
 "name": &"part2",
@@ -30,7 +30,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_a4elq")
+"texture": ExtResource("5_86kbv")
 }],
 "loop": true,
 "name": &"part3",
@@ -53,7 +53,6 @@ script = ExtResource("1_ut4fy")
 metadata/part = ""
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1257215229]
-visible = false
 z_index = 1
 shape = SubResource("CircleShape2D_xkj4n")
 
@@ -63,8 +62,9 @@ script = ExtResource("2_ajdyi")
 
 [node name="part" type="AnimatedSprite2D" parent="part_moving" unique_id=1485740977]
 z_index = 1
+scale = Vector2(0.03, 0.03)
 sprite_frames = SubResource("SpriteFrames_86kbv")
-animation = &"part1"
+animation = &"part3"
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="part_moving" unique_id=1404931968]
 z_index = -1

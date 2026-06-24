@@ -12,9 +12,7 @@ func _ready():
 func _process(delta):
 	
 	if Input.is_action_just_pressed("next_scene"):
-		if current_scene < 1:
+		if current_scene < 5:
 			current_scene += 1
-		else:
-			switch_scene.switch_scene(next_world)
 
 		self.set_frame_and_progress(current_scene, 0.0)

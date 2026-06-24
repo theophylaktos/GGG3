@@ -23,7 +23,9 @@ func _process(delta):
 func _on_body_entered(body):
 	if get_meta("part") == "one":
 		switch_scene.switch_scene(CUTSCENE_23)
+		PlayerStats.world = "World2"
 	if get_meta("part") == "two":
 		switch_scene.switch_scene(CUTSCENE_34)
+		PlayerStats.world = "World3"
 	if get_meta("part") == "three":
 		switch_scene.switch_scene(CUTSCENEFINAL)

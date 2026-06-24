@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cwrd57votejm3"]
 
 [ext_resource type="Texture2D" uid="uid://bmajdumssfkvn" path="res://2 Final Art/Cutscenes/Cutscene23/IMG_0965.PNG" id="1_oejbj"]
-[ext_resource type="Texture2D" uid="uid://hli8ighrs13f" path="res://2 Final Art/Cutscenes/Cutscene23/IMG_3182.png" id="2_nx0x1"]
+[ext_resource type="Texture2D" uid="uid://d1ssddcj8cuk6" path="res://2 Final Art/Cutscenes/Cutscene34/IMG_3218.png" id="2_oejbj"]
 [ext_resource type="Script" uid="uid://f6vhftgtfk16" path="res://Cutscene23/cutscene_23.gd" id="12_gtned"]
 [ext_resource type="Texture2D" uid="uid://dtgtudgdsf8fk" path="res://2 Final Art/Cutscenes/click_to_advance.png" id="13_s88gd"]
 
@@ -12,7 +12,7 @@ animations = [{
 "texture": ExtResource("1_oejbj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_nx0x1")
+"texture": ExtResource("2_oejbj")
 }],
 "loop": true,
 "name": &"default",

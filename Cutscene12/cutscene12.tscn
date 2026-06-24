@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cw2qm8lggsj26" path="res://2 Final Art/Cutscenes/Cutscene12/IMG_0961.PNG" id="8_qo02j"]
 [ext_resource type="Texture2D" uid="uid://bp4we8eye8tti" path="res://2 Final Art/Cutscenes/Cutscene12/IMG_0962.PNG" id="9_xq36s"]
 [ext_resource type="Texture2D" uid="uid://dhsacgn6i04hl" path="res://2 Final Art/Cutscenes/Cutscene12/IMG_3179.png" id="10_j4sa4"]
-[ext_resource type="Texture2D" uid="uid://b64q47s8ac6f3" path="res://2 Final Art/Cutscenes/Cutscene12/IMG_3180.png" id="11_7eipu"]
+[ext_resource type="Texture2D" uid="uid://bxk6gsg8xdfv1" path="res://2 Final Art/Cutscenes/Cutscene12/IMG_3224.png" id="11_7eipu"]
 [ext_resource type="Texture2D" uid="uid://dtgtudgdsf8fk" path="res://2 Final Art/Cutscenes/click_to_advance.png" id="12_7eipu"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_chbqg"]
