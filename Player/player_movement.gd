@@ -21,6 +21,9 @@ var initialPosition = Vector2(-334,-139.0)
 
 @onready var sprite = $Sprite
 
+@onready var walking = $Walking
+@onready var jetpack = $Jetpack
+
 func _ready():
 		
 	if PlayerStats.world == "World1":
@@ -60,6 +63,11 @@ func _physics_process(delta):
 		direction = 0
 		state = "idle"
 
+	#if direction: 
+		#walking.playing = true
+	#else:
+		#walking.playing = false
+
 	if direction: 
 		velocity.x = move_toward(velocity.x, TARGET_VELOCITY * direction, ACCELERATION * delta)
 	else:
@@ -78,8 +86,13 @@ func _physics_process(delta):
 	elif velocity.x < 0:
 		sprite.flip_h = false
 		
+	#if state == "ability":
+		#jetpack.playing = true
+	#else:
+		#jetpack.playing = false
+		
 	if state == "ability":
-		pass
+		sprite.play("ability")
 
 	elif not is_on_floor_before_move and is_on_floor_after_move:
 		sprite.play("jump_fall")

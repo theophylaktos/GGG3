@@ -1,6 +1,6 @@
 extends AnimatedSprite2D
 
-var void_world = "res://World2/world2.tscn"
+var next_world = "res://World3/world3.tscn"
 
 var current_scene = 0
 
@@ -12,9 +12,9 @@ func _ready():
 func _process(delta):
 	
 	if Input.is_action_just_pressed("next_scene"):
-		if current_scene < 10:
+		if current_scene < 1:
 			current_scene += 1
 		else:
-			switch_scene.switch_scene(void_world)
+			switch_scene.switch_scene(next_world)
 
 		self.set_frame_and_progress(current_scene, 0.0)

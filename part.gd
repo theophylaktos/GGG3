@@ -4,7 +4,7 @@ extends Area2D
 
 const CUTSCENE_23 = "res://Cutscene23/cutscene23.tscn"
 const CUTSCENE_34 = "res://Cutscene34/cutscene34.tscn"
-const CUTSCENEFINAL = "res://Cutscene Final/cutscenefinal.tscn"
+const CUTSCENEFINAL = "res://Cutscene Final/cutscene_final.tscn"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

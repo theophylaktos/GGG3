@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://u7c1h0vf4l0v"]
+
+[ext_resource type="Texture2D" uid="uid://ch2fx4gpibfnk" path="res://2 Final Art/Cutscenes/Cutscene34/IMG_3184.png" id="1_vkx2r"]
+[ext_resource type="Script" uid="uid://dhnskdueg4t04" path="res://Cutscene34/cutscene_34.gd" id="3_ps6ci"]
+[ext_resource type="Texture2D" uid="uid://dtgtudgdsf8fk" path="res://2 Final Art/Cutscenes/click_to_advance.png" id="4_4byvj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_chbqg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_vkx2r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.0
+}]
+
+[node name="Node2D" type="AnimatedSprite2D" unique_id=253188916]
+position = Vector2(576.241, 324)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_chbqg")
+script = ExtResource("3_ps6ci")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=69793107]
+z_index = -1
+offset_left = -1920.8033
+offset_top = -1080.0
+offset_right = 1919.1967
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1775254508]
+position = Vector2(1502.5299, 993.3333)
+texture = ExtResource("4_4byvj")
