@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://u7c1h0vf4l0v"]
 
-[ext_resource type="Texture2D" uid="uid://ch2fx4gpibfnk" path="res://2 Final Art/Cutscenes/Cutscene34/IMG_3184.png" id="1_vkx2r"]
+[ext_resource type="Texture2D" uid="uid://cf8axd3h68bnt" path="res://2 Final Art/Cutscenes/Cutscene34/IMG_3210.png" id="1_ps6ci"]
+[ext_resource type="Texture2D" uid="uid://d1ssddcj8cuk6" path="res://2 Final Art/Cutscenes/Cutscene34/IMG_3218.png" id="2_p5ays"]
 [ext_resource type="Script" uid="uid://dhnskdueg4t04" path="res://Cutscene34/cutscene_34.gd" id="3_ps6ci"]
 [ext_resource type="Texture2D" uid="uid://dtgtudgdsf8fk" path="res://2 Final Art/Cutscenes/click_to_advance.png" id="4_4byvj"]
 
@@ -8,7 +9,10 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_vkx2r")
+"texture": ExtResource("1_ps6ci")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_p5ays")
 }],
 "loop": true,
 "name": &"default",
