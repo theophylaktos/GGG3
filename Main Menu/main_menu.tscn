@@ -1,15 +1,28 @@
 [gd_scene format=3 uid="uid://dupfeb44k2g7a"]
 
+[ext_resource type="Texture2D" uid="uid://b7n3g6xldbsqy" path="res://2 Final Art/UI/Main Menu/Start button.png" id="1_60tkv"]
 [ext_resource type="Script" uid="uid://rb51mp4ftl8j" path="res://Main Menu/play_game.gd" id="1_vccqd"]
+[ext_resource type="Texture2D" uid="uid://kwn7wjkhtn8r" path="res://2 Final Art/UI/Main Menu/start_button_highlight_fix.png" id="2_15lat"]
+[ext_resource type="Texture2D" uid="uid://bna7hdnaqewxj" path="res://2 Final Art/UI/Main Menu/Title screen fix.png" id="4_60tkv"]
+
+[sub_resource type="BitMap" id="BitMap_npuod"]
 
 [node name="Node2D" type="Node2D" unique_id=288576083]
 
-[node name="play_game" type="Button" parent="." unique_id=814525533]
-offset_left = 18.0
-offset_top = 336.0
-offset_right = 324.0
-offset_bottom = 512.0
-text = "go to game :)"
+[node name="play_game" type="TextureButton" parent="." unique_id=1768278741]
+z_index = 1
+offset_right = 1152.0
+offset_bottom = 648.0
+texture_normal = ExtResource("1_60tkv")
+texture_hover = ExtResource("2_15lat")
+texture_click_mask = SubResource("BitMap_npuod")
+ignore_texture_size = true
+stretch_mode = 0
 script = ExtResource("1_vccqd")
+
+[node name="TitleScreen" type="Sprite2D" parent="." unique_id=539670163]
+position = Vector2(576.00006, 324)
+scale = Vector2(0.6000001, 0.6)
+texture = ExtResource("4_60tkv")
 
 [connection signal="button_down" from="play_game" to="play_game" method="_on_button_down"]

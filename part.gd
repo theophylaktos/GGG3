@@ -22,12 +22,8 @@ func _process(delta):
 	
 func _on_body_entered(body):
 	if get_meta("part") == "one":
-		PlayerStats.part1pickedup = true
 		switch_scene.switch_scene(CUTSCENE_23)
 	if get_meta("part") == "two":
 		switch_scene.switch_scene(CUTSCENE_34)
-		PlayerStats.part2pickedup = true
 	if get_meta("part") == "three":
 		switch_scene.switch_scene(CUTSCENEFINAL)
-		PlayerStats.part3pickedup = true
-	print(PlayerStats.part1pickedup,PlayerStats.part2pickedup,PlayerStats.part3pickedup)

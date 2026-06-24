@@ -52,8 +52,6 @@ collision_layer = 0
 script = ExtResource("1_ut4fy")
 metadata/part = ""
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=420348399]
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1257215229]
 visible = false
 z_index = 1

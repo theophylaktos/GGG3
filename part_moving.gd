@@ -9,7 +9,7 @@ func _ready():
 	
 	startPosition = position
 	
-	var tween = get_tree().create_tween()
+	var tween = create_tween()
 
 	tween.set_loops()
 	tween.set_trans(Tween.TRANS_SINE)
