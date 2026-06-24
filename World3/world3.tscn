@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cmnis5g3koi1w" path="res://Heart UI/heartUI.tscn" id="6_gysda"]
 [ext_resource type="Texture2D" uid="uid://b30p64cmlc52a" path="res://2 Final Art/Terrain/spike.png" id="6_wum43"]
 [ext_resource type="PackedScene" uid="uid://esnlv36v8pi8" path="res://part.tscn" id="7_xd2n7"]
+[ext_resource type="AudioStream" uid="uid://cak84dq5hf67k" path="res://4 Music/world_3.mp3" id="8_6t8cl"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vmp1b"]
 distance = -374.0
@@ -110,5 +111,9 @@ tile_set = SubResource("TileSet_6t8cl")
 [node name="Part" parent="." unique_id=1544738549 instance=ExtResource("7_xd2n7")]
 position = Vector2(-295, -2251)
 metadata/part = "two"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1308496379]
+stream = ExtResource("8_6t8cl")
+autoplay = true
 
 [connection signal="body_entered" from="death" to="Player" method="_on_death_body_entered"]

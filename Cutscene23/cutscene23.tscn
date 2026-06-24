@@ -1,3 +1,7 @@
 [gd_scene format=3 uid="uid://ctc41paxp8duo"]
 
+[ext_resource type="PackedScene" uid="uid://wpyi0j88oxyx" path="res://Cutscene12/cutscene12.tscn" id="1_b4604"]
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=1216873027]
+
+[node name="Node2D" parent="." unique_id=253188916 instance=ExtResource("1_b4604")]

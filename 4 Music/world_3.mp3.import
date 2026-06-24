@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cak84dq5hf67k"
+path="res://.godot/imported/world_3.mp3-983f149033462ad52d9dd304b98486af.mp3str"
+
+[deps]
+
+source_file="res://4 Music/world_3.mp3"
+dest_files=["res://.godot/imported/world_3.mp3-983f149033462ad52d9dd304b98486af.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://5wdn0sihwtt8" path="res://2 Final Art/Terrain/void_platform.png" id="4_mc6qg"]
 [ext_resource type="PackedScene" uid="uid://esnlv36v8pi8" path="res://part.tscn" id="6_mc6qg"]
 [ext_resource type="Texture2D" uid="uid://bgcml41jsdf8t" path="res://2 Final Art/Parts/core.png" id="7_m6wkt"]
+[ext_resource type="AudioStream" uid="uid://cj02wfxlk8b60" path="res://4 Music/world_2.mp3" id="8_gs022"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mc6qg"]
 texture = ExtResource("4_mc6qg")
@@ -112,5 +113,9 @@ color = Color(0.6, 0.38431373, 1, 1)
 energy = 1.01
 range_item_cull_mask = 2
 texture = ExtResource("7_m6wkt")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1359269544]
+stream = ExtResource("8_gs022")
+autoplay = true
 
 [connection signal="body_entered" from="death" to="Player" method="_on_death_body_entered"]

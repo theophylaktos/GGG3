@@ -10,6 +10,8 @@
 [ext_resource type="Script" uid="uid://85iw2nqekk8e" path="res://World1/ui_tutorial.gd" id="7_sxdrj"]
 [ext_resource type="Script" uid="uid://cje3u748wwcdq" path="res://World1/ability_ui_activator.gd" id="8_l87d6"]
 [ext_resource type="Script" uid="uid://ci5gpml4i7mks" path="res://World1/goto_void_cutscene.gd" id="9_qtj1r"]
+[ext_resource type="PackedScene" uid="uid://esnlv36v8pi8" path="res://part.tscn" id="11_p50h6"]
+[ext_resource type="AudioStream" uid="uid://bbclsd7ckecub" path="res://4 Music/world_1.mp3" id="12_7xvjd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wdv28"]
 texture = ExtResource("3_wdv28")
@@ -147,6 +149,14 @@ collision_layer = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Right Bound" unique_id=707699971]
 rotation = -1.5707964
 shape = SubResource("WorldBoundaryShape2D_wdv28")
+
+[node name="Part" parent="." unique_id=1544738549 instance=ExtResource("11_p50h6")]
+position = Vector2(315, -1749)
+metadata/part = "one"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=110029963]
+stream = ExtResource("12_7xvjd")
+autoplay = true
 
 [connection signal="body_entered" from="ability ui activator" to="CanvasLayer/tutorial UI" method="_on_ability_tutorial_ui_activate_body_entered"]
 [connection signal="body_entered" from="ability ui activator" to="ability ui activator" method="_on_body_entered"]
